@@ -12,6 +12,8 @@
 		F1019E9C262D2F8400E529B5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E9B262D2F8400E529B5 /* GameViewController.swift */; };
 		F1019E9F262D2F8400E529B5 /* WordsGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1019E9D262D2F8400E529B5 /* WordsGame.storyboard */; };
 		F1019EA1262D2F8500E529B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1019EA0262D2F8500E529B5 /* Assets.xcassets */; };
+		F1019EBA262D410A00E529B5 /* GameEngineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019EB9262D410A00E529B5 /* GameEngineViewController.swift */; };
+		F1019EBD262D418400E529B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019EBC262D418400E529B5 /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F1019E9E262D2F8400E529B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WordsGame.storyboard; sourceTree = "<group>"; };
 		F1019EA0262D2F8500E529B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1019EA5262D2F8500E529B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1019EB9262D410A00E529B5 /* GameEngineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineViewController.swift; sourceTree = "<group>"; };
+		F1019EBC262D418400E529B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		F1019EAD262D2FCA00E529B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1019EBC262D418400E529B5 /* Word.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				F1019E9B262D2F8400E529B5 /* GameViewController.swift */,
+				F1019EB9262D410A00E529B5 /* GameEngineViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,7 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1019EBA262D410A00E529B5 /* GameEngineViewController.swift in Sources */,
 				F1019E9C262D2F8400E529B5 /* GameViewController.swift in Sources */,
+				F1019EBD262D418400E529B5 /* Word.swift in Sources */,
 				F1019E98262D2F8400E529B5 /* AppDelegate.swift in Sources */,
 				F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */,
 			);
