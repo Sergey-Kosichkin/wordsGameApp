@@ -26,9 +26,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed() {
+        doneButtonAction(from: answerTextField.text ?? "")
     }
     
     @IBAction func helpButtonPressed() {
+        helpButtonAction(from: answerTextField.text ?? "")
     }
 }
 
