@@ -17,6 +17,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var changeModeButton: UIButton!
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    var category = Category.getCategoryWord(from: DataManager.shared.cities,
+                                            usedWords: [],
+                                            description: "",
+                                            category: DataManager.shared.topic,
+                                            characters: DataManager.shared.approvedCharacters,
+                                            actualCharacter: "",
+                                            actualWord: DataManager.shared.cities.randomElement() ?? "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.image = UIImage(named: "Mask Group")
@@ -27,6 +35,10 @@ class GameViewController: UIViewController {
         helpDescriptionLabel.isHidden.toggle()
         lastAnswerLabel.isHidden.toggle()
         answerTextField.placeholder = "Введите слово на последнюю букву 'буква'"
+        
+        // Sergey changes
+        helpDescriptionLabel.text = category.actualWord
+        category.usedWords.insert(helpDescriptionLabel.text ?? "")
 
     }
     
