@@ -16,27 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZXy-Be-VkC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZXy-Be-VkC">
                                 <rect key="frame" x="20" y="338" width="374" height="34"/>
                                 <color key="tintColor" red="0.0" green="0.17769555349999999" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mu9-KU-onA"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoO-bY-ZiZ">
                                 <rect key="frame" x="50" y="768" width="314" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.17769555347619681" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Старт">
                                     <color key="titleColor" white="1" alpha="0.84705882352941175" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Efd-az-XHb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="left" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beK-eI-MnL">
-                                <rect key="frame" x="20" y="384" width="82" height="32"/>
+                            <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beK-eI-MnL">
+                                <rect key="frame" x="20" y="380" width="126" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Need help?"/>
+                                <state key="normal" title="Подсказка?"/>
                                 <connections>
                                     <action selector="helpButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="R0z-Ue-Q76"/>
                                 </connections>
@@ -44,33 +47,43 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-75-ZcM">
                                 <rect key="frame" x="0.0" y="167" width="414" height="729"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-g1-g3m">
-                                <rect key="frame" x="20" y="456" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гамбург" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-g1-g3m">
+                                <rect key="frame" x="20" y="428" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-xC-wpo">
                                 <rect key="frame" x="120" y="112" width="174" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <state key="normal" title="Normal mode ▼">
+                                <state key="normal" title="Города ▼">
                                     <color key="titleColor" red="1" green="0.65745048278272" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Санкт- Петербург" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkv-Q4-P6D">
+                                <rect key="frame" x="20" y="287.5" width="194" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.65745048279999996" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="18J-nr-oCr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXy-Be-VkC" secondAttribute="trailing" constant="20" id="2ee-BS-S7e"/>
                             <constraint firstItem="ilu-75-ZcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3aO-hS-cAU"/>
+                            <constraint firstItem="ZXy-Be-VkC" firstAttribute="top" secondItem="hkv-Q4-P6D" secondAttribute="bottom" constant="24" id="IFX-vR-062"/>
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="JOk-LJ-9f2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXy-Be-VkC" secondAttribute="trailing" constant="20" id="JV4-7g-Eri"/>
                             <constraint firstItem="ZoO-bY-ZiZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0602679" id="JY1-oS-y3Q"/>
-                            <constraint firstItem="rBX-g1-g3m" firstAttribute="top" secondItem="beK-eI-MnL" secondAttribute="bottom" constant="40" id="Nx6-87-jYy"/>
+                            <constraint firstItem="hkv-Q4-P6D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KWc-dA-DVw"/>
+                            <constraint firstItem="rBX-g1-g3m" firstAttribute="top" secondItem="beK-eI-MnL" secondAttribute="bottom" constant="16" id="Nx6-87-jYy"/>
                             <constraint firstItem="ZXy-Be-VkC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RLV-1c-qeX"/>
                             <constraint firstItem="ZoO-bY-ZiZ" firstAttribute="top" secondItem="ilu-75-ZcM" secondAttribute="bottom" constant="-128" id="Usz-ek-osR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="beK-eI-MnL" secondAttribute="trailing" constant="268" id="ZVa-cV-cZY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="beK-eI-MnL" secondAttribute="trailing" constant="268" id="ZVa-cV-cZY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rBX-g1-g3m" secondAttribute="trailing" constant="20" id="fAh-kO-2ni"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="hkv-Q4-P6D" secondAttribute="trailing" constant="238" id="gna-Qp-54K"/>
                             <constraint firstItem="beK-eI-MnL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gsb-Nx-Rcp"/>
                             <constraint firstItem="ilu-75-ZcM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="hUz-LN-bGs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZoO-bY-ZiZ" secondAttribute="bottom" constant="40" id="hah-bx-5uX"/>
@@ -80,7 +93,7 @@
                             <constraint firstItem="rBX-g1-g3m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="quV-T3-5XN"/>
                             <constraint firstItem="ilu-75-ZcM" firstAttribute="centerX" secondItem="ZXy-Be-VkC" secondAttribute="centerX" id="sNv-qZ-FOX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZoO-bY-ZiZ" secondAttribute="trailing" constant="50" id="wRZ-aM-2Fa"/>
-                            <constraint firstItem="beK-eI-MnL" firstAttribute="top" secondItem="ZXy-Be-VkC" secondAttribute="bottom" constant="12" id="wf7-by-sdr"/>
+                            <constraint firstItem="beK-eI-MnL" firstAttribute="top" secondItem="ZXy-Be-VkC" secondAttribute="bottom" constant="8" id="wf7-by-sdr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Words game" id="7GN-Jf-N7b">
@@ -96,6 +109,7 @@
                         <outlet property="changeModeButton" destination="dKT-xC-wpo" id="BRi-RM-NEo"/>
                         <outlet property="helpButton" destination="beK-eI-MnL" id="N26-oO-ZNF"/>
                         <outlet property="helpDescriptionLabel" destination="rBX-g1-g3m" id="KOB-zl-oKw"/>
+                        <outlet property="lastAnswerLabel" destination="hkv-Q4-P6D" id="UtL-9t-4Tr"/>
                         <outlet property="startButton" destination="ZoO-bY-ZiZ" id="AAw-0C-yGn"/>
                     </connections>
                 </viewController>
