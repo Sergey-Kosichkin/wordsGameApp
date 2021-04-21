@@ -7,12 +7,37 @@
 
 
 struct Category {
-    let word: String
+    var words: Set<String>
+    var usedWords: Set<String>
     let description: String
     let category: Topic
+    let characters: [String]
+    var actualCharacter: String
+    var actualWord: String
     
 }
 
+extension Category {
+    static func getCategoryWord(from words: Set<String>,
+                                usedWords: Set<String>,
+                                description: String,
+                                category: Topic,
+                                characters: [String],
+                                actualCharacter: String,
+                                actualWord: String) -> Category {
+        let category = Category(words: words,
+                                usedWords: usedWords,
+                                description: description,
+                                category: category,
+                                characters: characters,
+                                actualCharacter: actualCharacter,
+                                actualWord: actualWord)
+        
+        
+        
+        return category
+    }
+}
 enum Topic: String{
     case City = "City"
     case Country = "Country"
