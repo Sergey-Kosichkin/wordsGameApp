@@ -34,7 +34,7 @@ class GameViewController: UIViewController {
         
         helpDescriptionLabel.isHidden.toggle()
         lastAnswerLabel.isHidden.toggle()
-        answerTextField.placeholder = "Введите слово на последнюю букву 'буква'"
+        
         
 
     }

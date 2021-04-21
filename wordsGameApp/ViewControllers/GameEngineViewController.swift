@@ -38,6 +38,9 @@ extension GameViewController {
             category.usedWords.insert(helpDescriptionLabel.text ?? "")
             
             lastAnswerLabel.isHidden.toggle()
+           
+            let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
+            answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
         }
         return functionDone
     }
@@ -50,6 +53,7 @@ extension GameViewController {
     
     
     private func checkLastCharacter(from actualWord: String) -> Bool {
+        
         var lastCharacter = ""
         var changeIndexNumber = 0
         
@@ -64,6 +68,7 @@ extension GameViewController {
             }
         }
         category.actualCharacter = lastCharacter
+        
         return lastCharacter != ""
     }
     
@@ -116,6 +121,8 @@ extension GameViewController {
     private func changeTrueWord(with typedWord: String) {
         answerTextField.text = ""
         lastAnswerLabel.text = typedWord
+        let _ = checkLastCharacter(from: typedWord)
+        answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
     }
 }
 
