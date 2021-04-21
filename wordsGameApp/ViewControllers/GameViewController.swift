@@ -36,16 +36,11 @@ class GameViewController: UIViewController {
         lastAnswerLabel.isHidden.toggle()
         answerTextField.placeholder = "Введите слово на последнюю букву 'буква'"
         
-        // Sergey changes
-        helpDescriptionLabel.text = category.actualWord
-        category.usedWords.insert(helpDescriptionLabel.text ?? "")
 
     }
     
     @IBAction func startButtonPressed() {
         doneButtonAction(from: answerTextField.text ?? "")
-        lastAnswerLabel.isHidden = false
-        lastAnswerLabel.text = answerTextField.text
     }
     
     @IBAction func helpButtonPressed() {

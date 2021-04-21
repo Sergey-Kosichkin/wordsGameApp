@@ -12,8 +12,9 @@ extension GameViewController {
     
     
     func doneButtonAction(from textField: String) {
+        guard initialStart() else { return }
         checkEmptyTF(textField: textField)
-        guard checkLastCharacter(from: helpDescriptionLabel.text ?? "") else { return }
+        guard checkLastCharacter(from: lastAnswerLabel.text ?? "") else { return }
         guard checkTrueWord(from: textField) else { return }
         guard checkUsedWord(from: textField) else { return }
         guard checkCityExistance(from: textField) else { return }
@@ -26,6 +27,20 @@ extension GameViewController {
         
     }
     
+    private func initialStart() -> Bool {
+        var functionDone = true
+        
+        if lastAnswerLabel.text == "Город" {
+            functionDone = false
+            startButton.setTitle("Done", for: .normal)
+            
+            lastAnswerLabel.text = category.actualWord
+            category.usedWords.insert(helpDescriptionLabel.text ?? "")
+            
+            lastAnswerLabel.isHidden.toggle()
+        }
+        return functionDone
+    }
     
     private func checkEmptyTF(textField: String) {
         if textField == "" {
@@ -100,7 +115,7 @@ extension GameViewController {
     
     private func changeTrueWord(with typedWord: String) {
         answerTextField.text = ""
-        helpDescriptionLabel.text = typedWord
+        lastAnswerLabel.text = typedWord
     }
 }
 
