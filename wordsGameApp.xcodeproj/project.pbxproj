@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		5EFA64EE262E0D2F002FDE25 /* GameEngineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA64ED262E0D2F002FDE25 /* GameEngineViewController.swift */; };
 		5EFA64F1262F0FBA002FDE25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA64F0262F0FB9002FDE25 /* SettingsViewController.swift */; };
+		A5990376262FCE0F0033BE43 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5990375262FCE0F0033BE43 /* DataManager.swift */; };
 		F1019E98262D2F8400E529B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E97262D2F8400E529B5 /* AppDelegate.swift */; };
 		F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E99262D2F8400E529B5 /* SceneDelegate.swift */; };
 		F1019E9C262D2F8400E529B5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E9B262D2F8400E529B5 /* GameViewController.swift */; };
 		F1019E9F262D2F8400E529B5 /* WordsGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1019E9D262D2F8400E529B5 /* WordsGame.storyboard */; };
 		F1019EA1262D2F8500E529B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1019EA0262D2F8500E529B5 /* Assets.xcassets */; };
-		F1019EBD262D418400E529B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019EBC262D418400E529B5 /* Word.swift */; };
+		F1019EBD262D418400E529B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019EBC262D418400E529B5 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5EFA64ED262E0D2F002FDE25 /* GameEngineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineViewController.swift; sourceTree = "<group>"; };
 		5EFA64F0262F0FB9002FDE25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5990375262FCE0F0033BE43 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F1019E94262D2F8400E529B5 /* wordsGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1019E97262D2F8400E529B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1019E99262D2F8400E529B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +29,7 @@
 		F1019E9E262D2F8400E529B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/WordsGame.storyboard; sourceTree = "<group>"; };
 		F1019EA0262D2F8500E529B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1019EA5262D2F8500E529B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1019EBC262D418400E529B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		F1019EBC262D418400E529B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,7 @@
 		F1019EAD262D2FCA00E529B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F1019EBC262D418400E529B5 /* Word.swift */,
+				F1019EBC262D418400E529B5 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +119,7 @@
 		F1019EB3262D322E00E529B5 /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
+				A5990375262FCE0F0033BE43 /* DataManager.swift */,
 			);
 			path = "Service layer";
 			sourceTree = "<group>";
@@ -191,8 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1019E9C262D2F8400E529B5 /* GameViewController.swift in Sources */,
-				F1019EBD262D418400E529B5 /* Word.swift in Sources */,
+				F1019EBD262D418400E529B5 /* Category.swift in Sources */,
 				F1019E98262D2F8400E529B5 /* AppDelegate.swift in Sources */,
+				A5990376262FCE0F0033BE43 /* DataManager.swift in Sources */,
 				F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */,
 				5EFA64EE262E0D2F002FDE25 /* GameEngineViewController.swift in Sources */,
 				5EFA64F1262F0FBA002FDE25 /* SettingsViewController.swift in Sources */,
