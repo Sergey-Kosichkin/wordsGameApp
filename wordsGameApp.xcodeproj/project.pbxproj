@@ -16,6 +16,7 @@
 		F1019E9F262D2F8400E529B5 /* WordsGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1019E9D262D2F8400E529B5 /* WordsGame.storyboard */; };
 		F1019EA1262D2F8500E529B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1019EA0262D2F8500E529B5 /* Assets.xcassets */; };
 		F1019EBD262D418400E529B5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019EBC262D418400E529B5 /* Category.swift */; };
+		F14FEB3D2632846B00FB564F /* DictionaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FEB3C2632846B00FB564F /* DictionaryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F1019EA0262D2F8500E529B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1019EA5262D2F8500E529B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1019EBC262D418400E529B5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F14FEB3C2632846B00FB564F /* DictionaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A5990375262FCE0F0033BE43 /* DataManager.swift */,
+				F14FEB3C2632846B00FB564F /* DictionaryManager.swift */,
 			);
 			path = "Service layer";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				F1019E9C262D2F8400E529B5 /* GameViewController.swift in Sources */,
 				F1019EBD262D418400E529B5 /* Category.swift in Sources */,
 				F1019E98262D2F8400E529B5 /* AppDelegate.swift in Sources */,
+				F14FEB3D2632846B00FB564F /* DictionaryManager.swift in Sources */,
 				A5990376262FCE0F0033BE43 /* DataManager.swift in Sources */,
 				F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */,
 				5EFA64EE262E0D2F002FDE25 /* GameEngineViewController.swift in Sources */,

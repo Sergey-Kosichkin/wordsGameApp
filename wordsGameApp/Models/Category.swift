@@ -11,7 +11,7 @@ struct Category {
     var usedWords: Set<String>
     let description: String
     let category: Topic
-    let characters: [String]
+    var characters: Set<String>
     var actualCharacter: String
     var actualWord: String
     
@@ -22,7 +22,7 @@ extension Category {
                                 usedWords: Set<String>,
                                 description: String,
                                 category: Topic,
-                                characters: [String],
+                                characters: Set<String>,
                                 actualCharacter: String,
                                 actualWord: String) -> Category {
         let category = Category(words: words,
