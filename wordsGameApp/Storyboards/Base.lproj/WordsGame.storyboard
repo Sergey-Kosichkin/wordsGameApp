@@ -67,19 +67,29 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Самая простая интеллектуальная игра. Выберите категорию слов по душе и вписывайте слова на последнюю букву предыдущего🤹🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjE-kC-JSE">
+                                <rect key="frame" x="20" y="405" width="374" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="18J-nr-oCr"/>
                             <constraint firstItem="ilu-75-ZcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3aO-hS-cAU"/>
+                            <constraint firstItem="LjE-kC-JSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Al1-do-PRz"/>
+                            <constraint firstItem="LjE-kC-JSE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FAu-bF-Ddf"/>
                             <constraint firstItem="ZXy-Be-VkC" firstAttribute="top" secondItem="hkv-Q4-P6D" secondAttribute="bottom" constant="24" id="IFX-vR-062"/>
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="JOk-LJ-9f2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXy-Be-VkC" secondAttribute="trailing" constant="20" id="JV4-7g-Eri"/>
                             <constraint firstItem="ZoO-bY-ZiZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0602679" id="JY1-oS-y3Q"/>
                             <constraint firstItem="hkv-Q4-P6D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KWc-dA-DVw"/>
                             <constraint firstItem="rBX-g1-g3m" firstAttribute="top" secondItem="beK-eI-MnL" secondAttribute="bottom" constant="16" id="Nx6-87-jYy"/>
+                            <constraint firstItem="LjE-kC-JSE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QEI-nf-wJC"/>
                             <constraint firstItem="ZXy-Be-VkC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RLV-1c-qeX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LjE-kC-JSE" secondAttribute="trailing" constant="20" id="U6e-u2-9pN"/>
                             <constraint firstItem="ZoO-bY-ZiZ" firstAttribute="top" secondItem="ilu-75-ZcM" secondAttribute="bottom" constant="-128" id="Usz-ek-osR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="beK-eI-MnL" secondAttribute="trailing" constant="268" id="ZVa-cV-cZY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rBX-g1-g3m" secondAttribute="trailing" constant="20" id="fAh-kO-2ni"/>
@@ -107,6 +117,7 @@
                         <outlet property="answerTextField" destination="ZXy-Be-VkC" id="Nox-MI-1wV"/>
                         <outlet property="backgroundImage" destination="ilu-75-ZcM" id="aRo-GO-poC"/>
                         <outlet property="changeModeButton" destination="dKT-xC-wpo" id="BRi-RM-NEo"/>
+                        <outlet property="gameDescriptionLabel" destination="LjE-kC-JSE" id="yCx-2r-l5W"/>
                         <outlet property="helpButton" destination="beK-eI-MnL" id="N26-oO-ZNF"/>
                         <outlet property="helpDescriptionLabel" destination="rBX-g1-g3m" id="KOB-zl-oKw"/>
                         <outlet property="lastAnswerLabel" destination="hkv-Q4-P6D" id="UtL-9t-4Tr"/>
@@ -126,19 +137,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Selected mode" id="R9a-Y3-MPp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Selected mode" id="R9a-Y3-MPp" customClass="SwitchTableViewCell" customModule="wordsGameApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9a-Y3-MPp" id="gPc-21-1A7">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUg-tM-sRi">
-                                            <rect key="frame" x="355" y="6" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUg-tM-sRi">
+                                            <rect key="frame" x="345" y="6" width="51" height="31"/>
                                         </switch>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SUg-tM-sRi" firstAttribute="top" secondItem="gPc-21-1A7" secondAttribute="top" constant="6" id="3Rf-Va-Ny7"/>
+                                        <constraint firstAttribute="trailing" secondItem="SUg-tM-sRi" secondAttribute="trailing" constant="20" id="voK-Jc-LWG"/>
+                                        <constraint firstItem="SUg-tM-sRi" firstAttribute="leading" secondItem="gPc-21-1A7" secondAttribute="leading" constant="345" id="wZd-7l-2ER"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="modeActivationSwitch" destination="SUg-tM-sRi" id="aQZ-ib-oJ8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

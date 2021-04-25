@@ -9,6 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var gameDescriptionLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var helpDescriptionLabel: UILabel!
     @IBOutlet weak var lastAnswerLabel: UILabel!
@@ -32,20 +33,23 @@ class GameViewController: UIViewController {
         
         startButton.layer.cornerRadius = 18
         
-        helpDescriptionLabel.isHidden.toggle()
-        lastAnswerLabel.isHidden.toggle()
-        
-        
-
+        helpDescriptionLabel.isHidden = true
+        lastAnswerLabel.isHidden = true
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let settingsVC = segue.destination as? SettingsViewController else { return }
+//        
+//    }
+    
     @IBAction func startButtonPressed() {
+        gameDescriptionLabel.isHidden = true
         doneButtonAction(from: answerTextField.text ?? "")
     }
     
     @IBAction func helpButtonPressed() {
-        helpDescriptionLabel.isHidden = false
         helpButtonAction(from: answerTextField.text ?? "")
+        helpDescriptionLabel.isHidden = false
     }
 }
 
