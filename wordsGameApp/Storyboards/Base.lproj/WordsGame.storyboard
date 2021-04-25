@@ -20,7 +20,7 @@
                                 <rect key="frame" x="20" y="338" width="374" height="34"/>
                                 <color key="tintColor" red="0.0" green="0.17769555349999999" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mu9-KU-onA"/>
                                 </connections>
