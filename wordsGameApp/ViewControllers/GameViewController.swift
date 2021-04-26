@@ -45,9 +45,6 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let changeModeVC = segue.destination as? ChangeModeViewController else { return }
-//        changeModeVC.citiesMode = Topic.City
-//        changeModeVC.countriesMode = Topic.Country
-//        changeModeVC.animalsMode = Topic.Animal
         changeModeVC.mode = mode
     }
     
@@ -63,6 +60,7 @@ class GameViewController: UIViewController {
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         guard let changeModeVC = segue.source as? ChangeModeViewController else { return }
+        
         if changeModeVC.citiesSwitch.isOn {
             changeModeButton.setTitle("Города ▼", for: .normal)
             backgroundImage.image = UIImage(named: "Mask Group")
@@ -73,12 +71,15 @@ class GameViewController: UIViewController {
             changeModeButton.setTitle("Животные ▼", for: .normal)
             backgroundImage.image = UIImage(named: "Mask Group2")
         }
+        
         self.mode = changeModeVC.mode
         lastAnswerLabel.text = "Город"
         checkCategoryForHelp()
+        
         let _ = initialStart()
         helpDescriptionLabel.isHidden = true
         changeSetsAfterCategories(with: lastAnswerLabel.text ?? "" )
+        
         let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "" )
         gameDescriptionLabel.isHidden = true
         answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
