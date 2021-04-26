@@ -12,11 +12,12 @@ extension GameViewController {
     
     
     func doneButtonAction(from textField: String) {
+        checkCategory()
         guard initialStart() else { return }
         checkEmptyTF(textField: textField)
         
         guard checkLastCharacter(from: lastAnswerLabel.text ?? "") else { return }
-        guard checkCharacterAvailability(from: textField) else { return }
+        //guard checkCharacterAvailability(from: textField) else { return }
         guard checkTrueWord(from: textField) else { return }
         guard checkUsedWord(from: textField) else { return }
         guard checkCityExistance(from: textField) else { return }
@@ -28,25 +29,47 @@ extension GameViewController {
     }
     
     func helpButtonAction(from textField: String) {
+        checkCategoryForHelp()
+        guard checkLastCharacter(from: lastAnswerLabel.text ?? "") else { return }
+        changeSetsAfterCategories(with: lastAnswerLabel.text ?? "" )
+        
+        generateRandomWord()
         
     }
     
-    private func initialStart() -> Bool {
+    func checkCategory() {
+        if categorizedWords.isEmpty {
+        if let categorized = allWords[mode] {
+            categorizedWords = categorized
+        }
+        }
+    }
+    
+    func checkCategoryForHelp() {
+        if let categorized = allWords[mode] {
+            categorizedWords = categorized
+        }
+    }
+    
+   func initialStart() -> Bool {
         var functionDone = true
         
         if lastAnswerLabel.text == "Город" {
             functionDone = false
             startButton.setTitle("Готово", for: .normal)
             
-            lastAnswerLabel.text = category.actualWord
+            lastAnswerLabel.text = categorizedWords[categorizedWords.keys.randomElement() ?? "A"]?.randomElement()
             category.usedWords.insert(helpDescriptionLabel.text ?? "")
             
             lastAnswerLabel.isHidden = false
             answerTextField.isHidden = false
             helpButton.isHidden = false
            
+            //let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
+            if answerTextField.placeholder == nil{
             let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
             answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
+            }
         }
         return functionDone
     }
@@ -58,8 +81,8 @@ extension GameViewController {
     }
     
     
-    private func checkLastCharacter(from actualWord: String) -> Bool {
-        
+    func checkLastCharacter(from actualWord: String) -> Bool {
+        //print(categorizedWords.keys)
         var lastCharacter = ""
         var changeIndexNumber = 0
         
@@ -67,43 +90,49 @@ extension GameViewController {
             changeIndexNumber += 1
             let index = actualWord.count - changeIndexNumber
             if index >= 0 {
-                for char in category.characters {
+                for char in categorizedWords.keys {
                     if char.uppercased() == String(Array(actualWord)[index]).uppercased() {
                         lastCharacter = String(Array(actualWord)[index]).uppercased()
                     }
                 }
+                category.actualCharacter = lastCharacter
+                
             } else {
-                lastCharacter = category.characters.randomElement() ?? ""
-                showAlert(title: "Нет нужной буквы!", message: "Меняем на букву '\(lastCharacter)'.")
+                //lastCharacter = category.characters.randomElement() ?? ""
+                showAlert(title: "Поздравляем🥳", message: "Вы выйграли!")
                 
             }
         }
-        category.actualCharacter = lastCharacter
         
         return lastCharacter != ""
     }
     
-    private func checkCharacterAvailability(from typedWord: String) -> Bool {
-        var functionDone = false
-        
-        for word in category.words {
-            if word.first?.uppercased() == category.actualCharacter.uppercased() {
-                functionDone = true
-            }
-        }
-        if !functionDone {
-            category.characters.remove(category.actualCharacter.uppercased())
-            print(category.characters)
-            let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
-            if !category.words.isEmpty {
-            let _ = checkCharacterAvailability(from: typedWord)
-            } else {
-                showAlert(title: "Победа!", message: "Все слова угаданы.")
-                
-            }
-        }
-        return functionDone
-    }
+//    func checkGameWin() {
+//        if let _ = categorizedWords[category.actualCharacter] == nil {
+//            
+//        }
+//    }
+//    private func checkCharacterAvailability(from typedWord: String) -> Bool {
+//        var functionDone = false
+//
+//        for word in category.words {
+//            if word.first?.uppercased() == category.actualCharacter.uppercased() {
+//                functionDone = true
+//            }
+//        }
+//        if !functionDone {
+//            category.characters.remove(category.actualCharacter.uppercased())
+//            print(category.characters)
+//            let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
+//            if !category.words.isEmpty {
+//            let _ = checkCharacterAvailability(from: typedWord)
+//            } else {
+//                showAlert(title: "Победа!", message: "Все слова угаданы.")
+//
+//            }
+//        }
+//        return functionDone
+//    }
     
     private func checkTrueWord(from typedWord: String) -> Bool {
         var functionDone = true
@@ -132,11 +161,13 @@ extension GameViewController {
     
     private func checkCityExistance(from typedWord: String) -> Bool {
         var functionDone = false
-        for word in category.words {
+        if let actualWords = categorizedWords[category.actualCharacter] {
+        for word in actualWords  {
             if word == typedWord {
                 functionDone = true
                 break
             }
+        }
         }
             
             if !functionDone {
@@ -145,10 +176,23 @@ extension GameViewController {
         return functionDone
     }
     
-    private func changeSetsOfWords(with typedWord: String) {
-        category.words.remove(typedWord)
+   private func changeSetsOfWords(with typedWord: String) {
+            if var set = categorizedWords[category.actualCharacter] {
+                set.remove(category.actualWord)
+                categorizedWords[category.actualCharacter] = set
+            }
+        
         category.usedWords.insert(typedWord)
     }
+    
+    func changeSetsAfterCategories(with typedWord: String) {
+             if var set = categorizedWords[category.actualCharacter] {
+                set.remove(lastAnswerLabel.text ?? "" )
+                 categorizedWords[category.actualCharacter] = set
+             }
+         
+        category.usedWords.insert(lastAnswerLabel.text ?? "" )
+     }
     
     private func changeTrueWord(with typedWord: String) {
         answerTextField.text = ""
@@ -159,8 +203,12 @@ extension GameViewController {
         let _ = checkLastCharacter(from: typedWord)
         answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
         helpDescriptionLabel.isHidden = true
-        let _ = checkCharacterAvailability(from: typedWord)
+        //let _ = checkCharacterAvailability(from: typedWord)
         
+    }
+    
+    private func generateRandomWord() {
+        helpDescriptionLabel.text = categorizedWords[category.actualCharacter]?.randomElement()
     }
 }
 

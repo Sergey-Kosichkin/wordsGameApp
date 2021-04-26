@@ -14,7 +14,7 @@ struct Category {
     var characters: Set<String>
     var actualCharacter: String
     var actualWord: String
-    
+
 }
 
 extension Category {
@@ -32,9 +32,9 @@ extension Category {
                                 characters: characters,
                                 actualCharacter: actualCharacter,
                                 actualWord: actualWord)
-        
-        
-        
+
+
+
         return category
     }
 }
@@ -44,7 +44,52 @@ enum Topic: String{
     case Animal = "Animal"
 }
 
-//enum Word {
-//    case Word
-//    case Description
+enum Word {
+    case Word
+    case Description
+}
+
+
+//struct Category {
+//    var words: Set<String>
+//    var usedWords: Set<String>
+//    let description: String
+//    let category: Topic
+//    let characters: [String]
+//    var actualCharacter: String
+//    var actualWord: String
+//}
+//
+//enum Topic {
+//    case city
+//    case country
+//    case animal
+//}
+//
+//extension Category {
+//    static func getCategoryWord() -> [Category] {
+//        [
+//            Category(words: DataManager.shared.cities,
+//                 usedWords: [""],
+//                 description: "",
+//                 category: .city,
+//                 characters: DataManager.shared.approvedCharacters,
+//                 actualCharacter: "",
+//                 actualWord: DataManager.shared.cities.randomElement() ?? ""),
+//            Category(words: DataManager.shared.countries,
+//                      usedWords: [""],
+//                      description: "",
+//                      category: .city,
+//                      characters: DataManager.shared.approvedCharacters,
+//                      actualCharacter: "",
+//                      actualWord: DataManager.shared.countries.randomElement() ?? ""),
+//            Category(words: DataManager.shared.animals,
+//                      usedWords: [""],
+//                      description: "",
+//                      category: .city,
+//                      characters: DataManager.shared.approvedCharacters,
+//                      actualCharacter: "",
+//                      actualWord: DataManager.shared.animals.randomElement() ?? "")
+//        ]
+//    }
 //}

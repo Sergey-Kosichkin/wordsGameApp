@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EB7956726357BBC001AC27E /* ChangeModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7956626357BBC001AC27E /* ChangeModeViewController.swift */; };
 		5EFA64EE262E0D2F002FDE25 /* GameEngineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA64ED262E0D2F002FDE25 /* GameEngineViewController.swift */; };
-		5EFA64F1262F0FBA002FDE25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFA64F0262F0FB9002FDE25 /* SettingsViewController.swift */; };
 		A5990376262FCE0F0033BE43 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5990375262FCE0F0033BE43 /* DataManager.swift */; };
 		F1019E98262D2F8400E529B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E97262D2F8400E529B5 /* AppDelegate.swift */; };
 		F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1019E99262D2F8400E529B5 /* SceneDelegate.swift */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EB7956626357BBC001AC27E /* ChangeModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeModeViewController.swift; sourceTree = "<group>"; };
 		5EFA64ED262E0D2F002FDE25 /* GameEngineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineViewController.swift; sourceTree = "<group>"; };
-		5EFA64F0262F0FB9002FDE25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A5990375262FCE0F0033BE43 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F1019E94262D2F8400E529B5 /* wordsGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordsGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1019E97262D2F8400E529B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				5EFA64ED262E0D2F002FDE25 /* GameEngineViewController.swift */,
-				5EFA64F0262F0FB9002FDE25 /* SettingsViewController.swift */,
 				F1019E9B262D2F8400E529B5 /* GameViewController.swift */,
+				5EB7956626357BBC001AC27E /* ChangeModeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,8 +202,8 @@
 				F14FEB3D2632846B00FB564F /* DictionaryManager.swift in Sources */,
 				A5990376262FCE0F0033BE43 /* DataManager.swift in Sources */,
 				F1019E9A262D2F8400E529B5 /* SceneDelegate.swift in Sources */,
+				5EB7956726357BBC001AC27E /* ChangeModeViewController.swift in Sources */,
 				5EFA64EE262E0D2F002FDE25 /* GameEngineViewController.swift in Sources */,
-				5EFA64F1262F0FBA002FDE25 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +343,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HW5V2H79D4;
 				INFOPLIST_FILE = wordsGameApp/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Kosichkin.wordsGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -362,12 +364,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HW5V2H79D4;
 				INFOPLIST_FILE = wordsGameApp/Supporting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Kosichkin.wordsGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
