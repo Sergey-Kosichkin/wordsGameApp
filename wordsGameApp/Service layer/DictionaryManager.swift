@@ -10,7 +10,6 @@ import Foundation
 class DictionaryManager {
     static let shared = DictionaryManager()
     
-    //var words: [Topic: String] = [:]
     var categories: [String: [Topic: String]] = [:]
     
     private init() {}
