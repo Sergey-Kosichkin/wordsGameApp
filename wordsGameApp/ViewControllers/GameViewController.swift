@@ -27,6 +27,8 @@ class GameViewController: UIViewController {
                                             actualWord: DataManager.shared.cities.randomElement() ?? "")
     
     var allWords = DataManager.shared.fullCategories
+    var mode: Topic = .City
+    var categorizedWords: [String: Set<String>] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +45,10 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let changeModeVC = segue.destination as? ChangeModeViewController else { return }
-        changeModeVC.citiesMode = Topic.City
-        changeModeVC.countriesMode = Topic.Country
-        changeModeVC.animalsMode = Topic.Animal
+//        changeModeVC.citiesMode = Topic.City
+//        changeModeVC.countriesMode = Topic.Country
+//        changeModeVC.animalsMode = Topic.Animal
+        changeModeVC.mode = mode
     }
     
     @IBAction func startButtonPressed() {
@@ -70,6 +73,14 @@ class GameViewController: UIViewController {
             changeModeButton.setTitle("Животные ▼", for: .normal)
             backgroundImage.image = UIImage(named: "Mask Group2")
         }
+        self.mode = changeModeVC.mode
+        lastAnswerLabel.text = "Город"
+        checkCategoryForHelp()
+        let _ = initialStart()
+        helpDescriptionLabel.isHidden = true
+        changeSetsAfterCategories(with: lastAnswerLabel.text ?? "" )
+        let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "" )
+        gameDescriptionLabel.isHidden = true
     }
 }
 

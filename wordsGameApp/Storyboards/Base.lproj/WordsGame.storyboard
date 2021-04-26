@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjE-kC-JSE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjE-kC-JSE">
                                 <rect key="frame" x="20" y="405" width="374" height="86"/>
                                 <string key="text">Сколько слов на последнюю букву предыдущего ты сможешь отгадать?🤹🏻
  Интеллектуальная игра с разнообразными категориями слов под ваше настроение</string>
@@ -87,7 +87,6 @@
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="18J-nr-oCr"/>
                             <constraint firstItem="ilu-75-ZcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3aO-hS-cAU"/>
                             <constraint firstItem="LjE-kC-JSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Al1-do-PRz"/>
-                            <constraint firstItem="LjE-kC-JSE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FAu-bF-Ddf"/>
                             <constraint firstItem="ZXy-Be-VkC" firstAttribute="top" secondItem="hkv-Q4-P6D" secondAttribute="bottom" constant="24" id="IFX-vR-062"/>
                             <constraint firstItem="dKT-xC-wpo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="JOk-LJ-9f2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXy-Be-VkC" secondAttribute="trailing" constant="20" id="JV4-7g-Eri"/>
@@ -172,19 +171,19 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-2u-ns7">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                         <connections>
-                                            <action selector="switchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="OGY-6u-yDZ"/>
+                                            <action selector="citiesSwitchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="o0c-UQ-ptT"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-UJ-9h1">
                                         <rect key="frame" x="0.0" y="74" width="51" height="31"/>
                                         <connections>
-                                            <action selector="switchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="Ulv-YU-df0"/>
+                                            <action selector="countriesSwitchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="SQL-jg-vs3"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yaw-wY-YAL">
                                         <rect key="frame" x="0.0" y="148" width="51" height="31"/>
                                         <connections>
-                                            <action selector="switchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="AFX-Fj-KgG"/>
+                                            <action selector="animalsSwitchChanged" destination="tWr-cM-YiF" eventType="valueChanged" id="Iay-VA-Bkn"/>
                                         </connections>
                                     </switch>
                                 </subviews>
