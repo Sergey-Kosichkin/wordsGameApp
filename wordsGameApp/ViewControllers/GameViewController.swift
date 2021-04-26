@@ -9,6 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var gameDescriptionLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var helpDescriptionLabel: UILabel!
     @IBOutlet weak var lastAnswerLabel: UILabel!
@@ -25,6 +26,8 @@ class GameViewController: UIViewController {
                                             actualCharacter: "",
                                             actualWord: DataManager.shared.cities.randomElement() ?? "")
     
+    var allWords = DataManager.shared.fullCategories
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.image = UIImage(named: "Mask Group")
@@ -32,20 +35,41 @@ class GameViewController: UIViewController {
         
         startButton.layer.cornerRadius = 18
         
-        helpDescriptionLabel.isHidden.toggle()
-        lastAnswerLabel.isHidden.toggle()
-        
-        
-
+        helpDescriptionLabel.isHidden = true
+        lastAnswerLabel.isHidden = true
+        answerTextField.isHidden = true
+        helpButton.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let changeModeVC = segue.destination as? ChangeModeViewController else { return }
+        changeModeVC.citiesMode = Topic.City
+        changeModeVC.countriesMode = Topic.Country
+        changeModeVC.animalsMode = Topic.Animal
     }
     
     @IBAction func startButtonPressed() {
+        gameDescriptionLabel.isHidden = true
         doneButtonAction(from: answerTextField.text ?? "")
     }
     
     @IBAction func helpButtonPressed() {
-        helpDescriptionLabel.isHidden = false
         helpButtonAction(from: answerTextField.text ?? "")
+        helpDescriptionLabel.isHidden = false
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let changeModeVC = segue.source as? ChangeModeViewController else { return }
+        if changeModeVC.citiesSwitch.isOn {
+            changeModeButton.setTitle("Города ▼", for: .normal)
+            backgroundImage.image = UIImage(named: "Mask Group")
+        } else if changeModeVC.countriesSwitch.isOn {
+            changeModeButton.setTitle("Страны ▼", for: .normal)
+            backgroundImage.image = UIImage(named: "Mask Group3")
+        } else if changeModeVC.animalsSwitch.isOn {
+            changeModeButton.setTitle("Животные ▼", for: .normal)
+            backgroundImage.image = UIImage(named: "Mask Group2")
+        }
     }
 }
 
@@ -55,7 +79,7 @@ extension GameViewController: UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-   
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == answerTextField {
             startButtonPressed()
