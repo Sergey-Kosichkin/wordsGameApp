@@ -66,7 +66,10 @@ extension GameViewController {
             helpButton.isHidden = false
            
             //let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
+            if answerTextField.placeholder == nil{
+            let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "")
             answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
+            }
         }
         return functionDone
     }
