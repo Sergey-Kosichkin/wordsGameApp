@@ -83,6 +83,7 @@ class GameViewController: UIViewController {
         let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "" )
         gameDescriptionLabel.isHidden = true
         answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
+        answerTextField.text = ""
     }
 }
 
