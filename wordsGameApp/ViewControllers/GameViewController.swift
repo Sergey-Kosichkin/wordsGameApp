@@ -81,6 +81,7 @@ class GameViewController: UIViewController {
         changeSetsAfterCategories(with: lastAnswerLabel.text ?? "" )
         let _ = checkLastCharacter(from: lastAnswerLabel.text ?? "" )
         gameDescriptionLabel.isHidden = true
+        answerTextField.placeholder = "Введите слово на букву \(category.actualCharacter)"
     }
 }
 
